@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def create
-    binding.pry
+    #binding.pry
     User.create(user_params)
     redirect_to 'sessions#create'
   end
