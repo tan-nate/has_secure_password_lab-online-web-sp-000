@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   def create
     #binding.pry
-    User.create(user_params)
-    session[:user_id] = @user.id
+    user = User.create(user_params)
+    session[:user_id] = user.id
   end
 
   private
