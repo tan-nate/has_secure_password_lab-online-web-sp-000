@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(name: params[:user][:name])
     #binding.pry
     return head(:forbidden) unless @user.authenticate(params[:password])
-    binding.pry
+    #binding.pry
     session[:user_id] = @user.id
   end
 end
