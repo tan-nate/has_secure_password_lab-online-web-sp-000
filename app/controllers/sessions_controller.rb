@@ -5,5 +5,6 @@ class SessionsController < ApplicationController
     return head(:forbidden) unless @user.authenticate(params[:password])
     #binding.pry
     session[:user_id] = @user.id
+    binding.pry
   end
 end
