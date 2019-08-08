@@ -2,7 +2,11 @@ class UsersController < ApplicationController
   def create
     #binding.pry
     user = User.new(user_params)
-    session[:user_id] = user.id
+    if user.password != user.password_confirmation
+      redirect_to new_user_path
+    else
+      session[:user_id] = user.id
+    end
   end
 
   private
